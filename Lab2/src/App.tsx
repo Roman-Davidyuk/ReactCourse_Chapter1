@@ -17,6 +17,10 @@ const App: React.FC = () => {
     setToDos([...toDos, newTask]);
   };
 
+  const deleteToDo = (id: number) => {
+    setToDos((prevToDos) => prevToDos.filter((todo) => todo.id !== id));
+  };
+
 
   const toggleComplete = (id: number) => {
     setToDos((prevToDos) =>
@@ -35,7 +39,7 @@ const App: React.FC = () => {
       <h1>ToDo List</h1>
       <SearchBar onSearch={setSearchQuery} />
       <AddToDoForm onAddToDo={addToDo} />
-      <ToDoList toDos={filteredToDos} onToggleComplete={toggleComplete} />
+      <ToDoList toDos={filteredToDos} onToggleComplete={toggleComplete} onDeleteToDo={deleteToDo} />
     </div>
   );
 };
