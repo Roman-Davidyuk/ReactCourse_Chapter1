@@ -1,4 +1,3 @@
-/* Загальні стилі для сторінки */
 body {
   font-family: "Arial", sans-serif;
   background-color: #f4f4f9;
@@ -8,10 +7,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-/* Контейнер програми */
 .App {
   background-color: white;
   padding: 20px;
@@ -21,7 +18,6 @@ body {
   max-width: 1000px;
 }
 
-/* Стиль заголовку */
 header h3 {
   margin: 0;
   text-align: center;
@@ -29,7 +25,6 @@ header h3 {
   color: #4a90e2;
 }
 
-/* Форма додавання нових задач */
 form {
   display: flex;
   justify-content: space-between;
@@ -87,7 +82,6 @@ ul {
   color: #aaa;
 }
 
-/* Стилі для чекбоксу та кнопки видалення */
 .todo-checkbox {
   margin-right: 10px;
 }
@@ -105,9 +99,8 @@ ul {
   background-color: #e04b4b;
 }
 
-/* Пошуковий рядок */
 input[type="text"].search-bar {
-  width: 90%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;

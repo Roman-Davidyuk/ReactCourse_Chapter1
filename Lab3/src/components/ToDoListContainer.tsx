@@ -10,7 +10,7 @@ const ToDoListContainer: React.FC = () => {
 
   const addToDo = (title: string) => {
     const newTask: ToDo = {
-      id:  Date.now(),
+      id: Date.now(),
       title,
       isComplete: false,
     };
@@ -35,9 +35,13 @@ const ToDoListContainer: React.FC = () => {
 
   return (
     <div>
-      <SearchBar onSearch={setSearchQuery} />
+      <SearchBar searchValue={searchQuery} onSearch={setSearchQuery} />
       <AddToDoForm onAddToDo={addToDo} />
-      <ToDoList toDos={filteredToDos} onToggleComplete={toggleComplete} onDeleteToDo={deleteToDo} />
+      <ToDoList
+        toDos={filteredToDos}
+        onToggleComplete={toggleComplete}
+        onDeleteToDo={deleteToDo}
+      />
     </div>
   );
 };
