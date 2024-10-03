@@ -44,7 +44,7 @@ const ToDoListContainer: React.FC = () => {
       <AddToDoForm onAddToDo={addToDo} />
       <Loader isLoading={isLoading}>
         <ToDoList
-          toDos={toDos || []}
+          toDos={filteredToDos || []}
           onToggleComplete={toggleComplete}
           onDeleteToDo={deleteToDo}
         />
