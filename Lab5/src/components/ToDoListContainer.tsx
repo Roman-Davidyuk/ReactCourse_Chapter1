@@ -42,9 +42,9 @@ const ToDoListContainer: React.FC = () => {
       <SearchBar searchValue={searchQuery} onSearch={setSearchQuery} />
 
       <AddToDoForm onAddToDo={addToDo} />
-      <Loader isLoading={isLoading}>
+      <Loader loading={isLoading}>
         <ToDoList
-          toDos={filteredToDos || []}
+          toDos={filteredToDos}
           onToggleComplete={toggleComplete}
           onDeleteToDo={deleteToDo}
         />

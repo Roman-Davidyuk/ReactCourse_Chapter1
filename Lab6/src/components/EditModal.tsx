@@ -12,10 +12,15 @@ const EditModal: React.FC<EditModalProps> = ({
   onClose,
 }) => {
   const [newTitle, setNewTitle] = useState(todoTitle);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSave = () => {
-    onSave(newTitle);
-    onClose();
+    if (!newTitle.trim()) {
+      setError("Title is required");
+    } else {
+      onSave(newTitle);
+      onClose();
+    }
   };
 
   return (
@@ -25,8 +30,13 @@ const EditModal: React.FC<EditModalProps> = ({
         <input
           type="text"
           value={newTitle}
-          onChange={(e) => setNewTitle(e.target.value)}
+          onChange={(e) => {
+            setNewTitle(e.target.value);
+            setError(null);
+          }}
+          className={error ? "input-error" : ""}
         />
+        {error && <p className="error-message">{error}</p>}
         <button onClick={handleSave}>Save</button>
         <button onClick={onClose}>Cancel</button>
       </div>

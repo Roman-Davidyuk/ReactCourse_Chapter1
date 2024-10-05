@@ -1,12 +1,21 @@
-import React from "react";
+import { FC, ReactNode } from "react";
 
-interface LoaderProps {
-  isLoading: boolean;
-  children: React.ReactNode;
+interface LoadingProps {
+  loading: boolean;
+  children?: ReactNode;
 }
 
-const Loader: React.FC<LoaderProps> = ({ isLoading, children }) => {
-  return isLoading ? <div className="spinner"></div> : <>{children}</>;
+function Spinner() {
+  return <div className="spinner"></div>;
+}
+
+const Loader: FC<LoadingProps> = ({ loading, children }) => {
+  return (
+    <div className="loading-container mt-4">
+      {loading && <Spinner />}
+      {children}
+    </div>
+  );
 };
 
 export default Loader;
